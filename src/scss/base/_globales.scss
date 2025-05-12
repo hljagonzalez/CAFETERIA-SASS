@@ -1,0 +1,40 @@
+@use "variables" as v; //Uso un alias para no tener que escribir "variables" todo el rato.
+
+html {
+ font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+ box-sizing: border-box; //Para que el padding y el border no afecten al ancho del elemento.
+}
+*,*::before,*::after {//para que el box-sizing afecte a todos los elementos.
+ box-sizing: inherit;
+}
+body {
+ font-family: v.$fuente_principal; //la importo de variables.scss
+}
+p {
+ color: v.$negro;
+ font-size: 2rem;
+}
+.contenedor {
+ width: 95%;
+ max-width: 120rem;
+ margin: 0 auto; // centrar el contenido
+}
+a {
+ text-decoration: none; // quitar subrayado
+}
+img {
+ max-width: 100%;
+ display: block; // para que tome todo el espacio disponible y no quede espacio en blanco debajo de la imagen.
+}
+h1,h2,h3 {
+ margin: 0 0 v.$separacion 0; // separación entre los títulos
+}
+h1 {
+ font-size: 4rem;
+}
+h2 {
+ font-size: 3.6rem;
+}
+h3 {
+ font-size: 3.2rem;
+}
