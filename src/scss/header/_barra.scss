@@ -1,0 +1,22 @@
+@use "base/mixins" as m;
+
+// recordar que estamos siguiendo una metodología de diseño mobile-first, por lo que pongo el display
+//flex en columnas para que vaya de arriba a abajo en dispositivos pequeños.
+.barra {
+   display: flex;
+   flex-direction: column;
+   //añado la media query para que en tablet se ponga en fila.
+   @include m.tablet {
+       flex-direction: row;
+       justify-content: space-between; //para que los elementos se separen a los extremos.
+       align-items: center; //centrar verticalmente.
+   }
+   .logo {
+       width: 50%; //para que ocupe el 50% del ancho de la pantalla del móvil
+       margin: 0 auto; //centrar el logo en la pantalla del móvil.
+       @include m.tablet {
+           width: 20rem; //Debo actualizar el valor de width para tablet y superior y que no ocupe el 50% del ancho de la plantalla.
+           margin: 0; //modificar el margin porque en tablet y superior debe aparecer a la izquierda.
+       }
+   }
+}

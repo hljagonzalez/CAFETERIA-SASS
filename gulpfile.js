@@ -53,7 +53,7 @@ exports.imagenes = imagenes;
 exports.versionWebp = versionWebp;
 exports.versionAvif = versionAvif;
 
-exports.default = series(imagenes, versionWebp, versionAvif, css, dev); // Mejor series, para que compile primero, y luego se quede escuchando. La tarea con los
+exports.default = series( css, dev); // Mejor series, para que compile primero, y luego se quede escuchando. La tarea con los
 //watch siempre la última
 
 //series -  lanza las tareas una detrás de otra, hasta que no termina una no empieza la otra

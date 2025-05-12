@@ -1,0 +1,13 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenido-principal {
+   background-color: v.$blanco;
+   padding: 5rem 2rem; // lo he aumentado
+
+   @include m.tablet {
+       padding: 10rem; //para dispositivos más grandes necesitamos más padding
+       margin-top: -10rem;// negativo porque queremos que la sección con el texto se superponga a la imagen.
+       position: relative;//para que la sección con el texto aparezca delante de la imagen.  
+   }
+}

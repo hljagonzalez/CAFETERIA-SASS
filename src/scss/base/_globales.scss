@@ -11,8 +11,9 @@ body {
  font-family: v.$fuente_principal; //la importo de variables.scss
 }
 p {
- color: v.$negro;
- font-size: 2rem;
+   color: v.$negro;
+   font-size: 1.6rem;
+   line-height: 2; //Interlineado de 2 líneas para que las separe un poco más.
 }
 .contenedor {
  width: 95%;
@@ -26,15 +27,8 @@ img {
  max-width: 100%;
  display: block; // para que tome todo el espacio disponible y no quede espacio en blanco debajo de la imagen.
 }
-h1,h2,h3 {
- margin: 0 0 v.$separacion 0; // separación entre los títulos
-}
-h1 {
- font-size: 4rem;
-}
-h2 {
- font-size: 3.6rem;
-}
-h3 {
- font-size: 3.2rem;
+body {
+   font-family: v.$fuente_principal; //la importo de variables.scss
+   font-size: 1.6rem;
+   background-color: v.$cafeClaro;
 }

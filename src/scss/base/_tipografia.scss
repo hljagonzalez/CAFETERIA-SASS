@@ -1,0 +1,37 @@
+@use 'variables' as v;
+
+h1, h2, h3 {
+   margin: 0 0 v.$separacion 0; // separación entre los títulos
+   font-family: v.$fuente_principal;
+   text-transform: uppercase;
+   text-align: center;
+   line-height: 1.5;
+}
+
+h1 {
+   font-size: 4rem;
+}
+
+h2 {
+   font-size: 3.6rem;
+   color: v.$primario;
+   span {
+       color: v.$secundario;
+       font-size: 1.8rem;
+       display: block; // para que fuerce un salto de línea. Ya no se usa <br> 
+   }
+   // la imagen del grano de café va a continuación del h2.
+   &::after {
+       content: ''; // para que se pueda usar la propiedad background-image
+       display: block; // poder darle un ancho y alto
+       width: 10rem;
+       height: 10rem;
+       margin: 0 auto; // centrar la imagen
+       background-image: url('../img/cafe.svg'); //cuidado con la ruta relativa
+       background-size: 10rem; //Porque si no me corta la imagen
+   }
+}
+
+h3 {
+   font-size: 3.2rem;
+}

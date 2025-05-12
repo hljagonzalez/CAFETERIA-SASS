@@ -1,0 +1,30 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.nav-principal {
+   display: flex;
+   flex-direction: column;
+   margin-top: 5rem; //para que no se pegue el logo a la barra de navegación.
+   @include m.tablet { //para tablet y superior
+       flex-direction: row;
+       gap: 1rem; //para que los enlaces no estén pegados.
+       margin-top: 0; // para deshacer el margin que le puse en dispositivos pequeños.
+   }
+   a {
+       text-align: center;
+       color: v.$blanco;
+       font-size: 2rem;
+       text-transform: uppercase;
+       font-weight: 700;
+       margin-bottom: 1rem; // para separar un poco mas las opciones de menu en el móvil.
+       @include m.tablet {
+           margin-bottom: 0;  //quito el margen inferior en tablet y superior que ya no me hace falta
+       }
+       &:hover {
+           color: v.$secundario; //cuando pase el mouse por encima.
+       }
+       &.activo {
+           color: v.$secundario; //Para marcar cuál es el enlace de la página activa.
+       }
+   }
+}
