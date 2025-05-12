@@ -1,4 +1,25 @@
-.header {
-   display: flex;
-   flex-direction: column;
+@use 'base/variables' as v; // No vale sólo con poner variables cómo cuando están en la misma carpeta
+                            //, tengo que darle la ruta (no es relativa ni absoluta, pero gulp la encuentra) 
+header{ 
+    padding: 5rem 0;
+    position: relative; //
+    // Todo este before es para que la imagen de fondo no se vea mas oscura.
+    &::before{ //& es para que al convertir a CSS no ponga un espacio en blanco entre header y ::before
+        content: '';
+        background-color: v.$negro ;
+        position :absolute; // Lo siguiente es para posicionar el background-color y que cubra todo.
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .6;
+    } 
+    .contenido-header{//anidando en SASS. En CSS se hacia .header .contenido-header{...}
+                        // No anidar mas de tres selectores cómo maximo
+        position: relative; //Para que el before con el background-color no se superponga al contenido.
+    }
+}
+//Header de la pagina de inicio.
+.header-inicio{
+    background-image: url(../img/header_inicio.jpg); // Importante la ruta hay que hacerla relativa al archivo app.css de la carpeta build/css que es donde se encuentra el codigo CSS que es el que entiende el navegador.
 }
