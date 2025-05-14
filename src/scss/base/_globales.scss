@@ -32,3 +32,8 @@ body {
    font-size: 1.6rem;
    background-color: v.$cafeClaro;
 }
+ul{
+ list-style: none; //quitar los puntos de las listas
+ padding:0; //quitar la franja verde a la izquierda
+ margin: 0; //quitar el espacio arriba y abajo
+}
