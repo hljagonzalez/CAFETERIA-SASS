@@ -1,0 +1,58 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.nuestro-menu {
+  background-image: url(../img/menu_arriba.svg), url(../img/menu_abajo.svg),
+    linear-gradient(to top, v.$primario, v.$primario);
+  //He cambiado el background-color que tenía por el background-image que me permite insertar imágenes en el fondo
+  // y además con el linear-gradient al hacer el degradado con el mismo color, lo que consigo es poner ese color
+  // de fondo como si usase el background-color
+  background-repeat: no-repeat; // si no me llena el fondo con las imágenes repitiéndolas
+  background-position: center 5rem, center 92%, 100%; //tenemos que colocar la imagen con los iconos arriba (menu_arriba.svg), la imagen con los iconos abajo (menu_abajo.svg) y el color de fondo con sus respectivas posiciones.
+  background-size: 200%; // para que crezca al doble de su tamaño y se vea bien en dispositivos pequeños
+
+  //la primera imagen centrada horizontalmente y a 5rem del borde superior
+  //la segunda imagen centrada horizontalmente y a 92% del borde superior (100% sería pegada al fondo)
+  padding: 15rem 5rem 20rem 5rem;
+
+  @include m.tablet {
+    padding: 15rem 0 20rem 0;
+  }
+  @include m.desktop {
+    background-size: 50%, 50%, 100%; //Para tamaño desktop, quiero que los iconos se vean más pequeños
+    // y para ello pongo el tamaño al 50% para las dos imágenes y 100% para el color de fondo
+  }
+}
+.grid-menu {
+   @include m.tablet{
+      @include m.grid(2, 2rem); //tamaño móvil 1 columna, pero a partir de tablet 2 columnas
+   //estamos usando dos mixins que teníamos creados, uno para crear una media query y el otro para crear un grid
+   }
+}
+.menu {
+   h3{
+       color: v.$blanco;    
+   }
+   li{
+       display: flex;
+       justify-content: space-between;
+       //Los li tienen dos párrafos, uno para el nombre y otro para el precio, le estoy diciendo que ponga los párrafos
+       //en una fila y separados en los extremos.
+       align-items: center; // centrará verticalmente, y así el precio cuando el párrafo sea extenso y la pantalla sea estrecha, no quedará arriba.
+       p{
+           color: v.$blanco;
+           font-size: 2.2rem;
+           line-height: 1.5; //para que el espaciado del párrafo sea menor y las líneas estén un poco más juntas.
+           margin: 0 0 2rem 0;// para que las líneas del menú estén más juntas.
+           span{
+               display: block; //estoy forzando que el span que tiene la descripción salte de línea.
+               color: v.$secundario;            
+           }
+       }
+       .precio{
+           // tamaño del precio mayor que el del nombre
+           font-size: 4rem;
+           font-weight: 700;
+       }
+   }
+}

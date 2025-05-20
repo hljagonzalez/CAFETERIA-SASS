@@ -1,0 +1,36 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+.footer{
+   background-color: v.$primario;
+   .contenido-footer{
+       padding: 5rem;
+       @include m.tablet{
+           @include m.grid(3, 2rem);
+       }
+   }
+   .copyright{
+       text-align: center;
+       margin: 0; // para quitar el espacio que había sobre el texto
+       padding: 2rem; // para darle un poco de espacio al texto
+       color: v.$blanco;
+   }
+}
+.footer-box{
+   font-family: v.$fuente_cursiva;
+   text-align: center;
+   margin-bottom: v.$separacion; //porque en móvil no quiero que estén pegados.
+   @include m.tablet {
+        margin-bottom: 0;
+        // Deshago la separación para dispositivos a partir de tablet, donde no la necesito
+   }
+   h3{
+       font-family: v.$fuente_cursiva;
+       margin: 0 0 1rem 0;
+       font-size: 2.4rem;
+       color: v.$secundario;
+   }
+   p{
+       font-size: 2rem;
+       margin: 0;
+   }
+}

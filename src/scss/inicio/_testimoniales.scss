@@ -1,0 +1,25 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.nuestros-testimoniales{
+   padding: 2rem;
+
+   @include m.tablet{
+       padding: 10rem;
+   }
+   .testimonial{
+       background-color: v.$cafeClaro;
+       padding: 2rem 4rem;
+       max-width: 50rem; //En pantallas grandes no quiero que ocupe todo el ancho,
+       //podría poner un width de 50%, pero esto hace que en pantallas pequeñas se vea mal.
+       //Para arreglarlo uso max-width para ahorrarme una media query.
+       margin: 0 auto;
+       border-radius: 1rem;
+       .autor{
+           text-align: right;
+           font-size: 2.4rem;
+           color: v.$primario;
+           font-family: v.$fuente_cursiva;
+       }
+   }
+}
