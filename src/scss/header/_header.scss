@@ -40,3 +40,8 @@ header {
 .header-inicio {
   background-image: url(../img/header_inicio.jpg); // Importante la ruta hay que hacerla relativa al archivo app.css de la carpeta build/css que es donde se encuentra el codigo CSS que es el que entiende el navegador.
 }
+.header-nosotros{
+ background-image: url(../img/header_nosotros.jpg);
+ background-repeat: no-repeat;
+ background-size: cover;
+}
